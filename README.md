@@ -21,7 +21,7 @@ _Example:_
 
 
 ### Servtrics.expressMetricsMiddleware(request, response, next)
-Middleware function for measuring Express endpoints response times. If expected Metrics are saved under `express_response_times` measurement. Stored fields and tags are the following:
+Middleware function for measuring Express endpoints response times. Metrics are saved under `express_response_times` measurement. Stored fields and tags are the following:
 
     {
         measurement: 'express_response_times',
