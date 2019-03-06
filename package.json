@@ -1,6 +1,6 @@
 {
   "name": "servtrics",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Service metrics using InfluxDB",
   "main": "./lib/index.js",
   "scripts": {
