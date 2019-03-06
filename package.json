@@ -5,7 +5,7 @@
   "main": "/src/index.js",
   "scripts": {
     "build": "babel src/ -d lib/",
-    "prepublish": "npm run build",
+    "prepublish": "npm run build"
   },
   "keywords": [
     "metrics",
