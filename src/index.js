@@ -10,9 +10,9 @@ export default class Servtrics {
             }
             return influx.createDatabase(database)
         }
-        const nullifyInfluxAndLogError = ({stack}) => {
+        const nullifyInfluxAndThrowError = error => {
             influx = null
-            console.error(`[${(new Date()).toISOString()}] Unable to connect to InfluxDB: ${stack}`)
+            throw error
         }
 
         influx = new InfluxDB({
@@ -68,7 +68,7 @@ export default class Servtrics {
 
         return influx.getDatabaseNames()
             .then(createDatabaseIfNotExistant)
-            .catch(nullifyInfluxAndLogError) 
+            .catch(nullifyInfluxAndThrowError) 
     }
 
     static sendMetrics(measurement, tags, fields) {
@@ -238,5 +238,6 @@ export default class Servtrics {
 }
 
 if(process.env.NODE_METRICS_HOST) {
-    Servtrics.connect(process.env.NODE_METRICS_HOST, process.env.NODE_METRICS_DATABASE)    
+    Servtrics.connect(process.env.NODE_METRICS_HOST, process.env.NODE_METRICS_DATABASE)
+    .catch(({stack}) => console.error(`[${(new Date()).toISOString()}] Unable to connect to InfluxDB: ${stack}`)) 
 }
