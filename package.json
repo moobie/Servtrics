@@ -2,7 +2,7 @@
   "name": "servtrics",
   "version": "1.0.0",
   "description": "Service metrics using InfluxDB",
-  "main": "/src/index.js",
+  "main": "./lib/index.js",
   "scripts": {
     "build": "babel src/ -d lib/",
     "prepublish": "npm run build"
