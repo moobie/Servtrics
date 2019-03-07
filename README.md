@@ -5,8 +5,9 @@ Nodejs service metrics using InfluxDB
 ## Usage
 `Servtrics = require('servtrics').default`
 
-Servtrics try to connect to Influx DB on import using the following enviromental variables:
+Servtrics try to connect to Influx DB on import using the following enviromental variables:    
 `NODE_METRICS_HOST`: Influx database instance URI
+
 `NODE_METRICS_DATABASE`: Influx database name
 
 If you need to manually trigger the connection, simply use the `connect` method, without defining the previous variables.
