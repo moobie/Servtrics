@@ -16,7 +16,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Roger13/Servtrics.git"
+    "url": "https://github.com/moobie/Servtrics.git"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
