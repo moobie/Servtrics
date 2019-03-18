@@ -237,8 +237,8 @@ class Servtrics {
     }
 }
 
-if(process.env.NODE_METRICS_HOST) {
-    Servtrics.connect(process.env.NODE_METRICS_HOST, process.env.NODE_METRICS_DATABASE)
+if(process.env.SERVTRICS_HOST) {
+    Servtrics.connect(process.env.SERVTRICS_HOST, process.env.SERVTRICS_DATABASE)
     .catch(({stack}) => console.error(`[${(new Date()).toISOString()}] Unable to connect to InfluxDB: ${stack}`)) 
 }
 
