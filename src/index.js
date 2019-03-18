@@ -2,7 +2,7 @@ import {InfluxDB, FieldType} from 'influx'
 
 let influx
 
-export class Servtrics {
+class Servtrics {
     static connect(host, database = 'servtrics') {
         const createDatabaseIfNotExistant = names => {
             if(names.includes(database)) {
@@ -241,3 +241,5 @@ if(process.env.NODE_METRICS_HOST) {
     Servtrics.connect(process.env.NODE_METRICS_HOST, process.env.NODE_METRICS_DATABASE)
     .catch(({stack}) => console.error(`[${(new Date()).toISOString()}] Unable to connect to InfluxDB: ${stack}`)) 
 }
+
+module.exports = Servtrics
