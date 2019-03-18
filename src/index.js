@@ -2,7 +2,7 @@ import {InfluxDB, FieldType} from 'influx'
 
 let influx
 
-export default class Servtrics {
+export class Servtrics {
     static connect(host, database = 'servtrics') {
         const createDatabaseIfNotExistant = names => {
             if(names.includes(database)) {
