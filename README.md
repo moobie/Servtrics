@@ -3,7 +3,7 @@
 Nodejs service metrics using InfluxDB
 
 ## Usage
-`Servtrics = require('servtrics').default`
+`Servtrics = require('servtrics')`
 
 Servtrics try to connect to Influx DB on import using the following enviromental variables:    
 `NODE_METRICS_HOST`: Influx database instance URI
