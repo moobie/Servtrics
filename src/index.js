@@ -90,7 +90,8 @@ class Servtrics {
                 sum,
                 upper
             }
-            const { path, method } = request
+            
+            const { baseUrl, method, route:{ path } } = request
             const { statusCode } = response
             const outcome = statusCode < 400 ? ( 
                 "SUCCESS"
@@ -102,7 +103,7 @@ class Servtrics {
                 )
             )
             const tags = {
-                path, 
+                path: `${baseUrl}${path}`, 
                 method, 
                 status_code: statusCode,
                 outcome
